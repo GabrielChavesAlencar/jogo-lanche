@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 557c307b9c7d43a479adff0d2b9b63da, type: 3}
-  m_Name: sanduiche
+  m_Name: sanduiche 2
   m_EditorClassIdentifier: 
   nome: sanduba
   ingredientes:
   - {fileID: 21300000, guid: c600d5e733693f746a4f7feb929b626c, type: 3}
-  - {fileID: 21300000, guid: 64970584a0ecc4f4daf818bfe0a3e603, type: 3}
+  - {fileID: 21300000, guid: 052f6b649f15c294091b70f42462343f, type: 3}
   - {fileID: 21300000, guid: bcffcc10587cc1d4382122e72cc2fefb, type: 3}

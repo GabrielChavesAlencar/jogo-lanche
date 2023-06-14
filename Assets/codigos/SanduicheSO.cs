@@ -7,8 +7,6 @@ using UnityEngine;
 public class SanduicheSO : ScriptableObject
 {
     public string nome;
-    public Sprite icone1; 
-    public Sprite icone2;
-    public Sprite icone3;
+    public Sprite [] ingredientes; 
 
 }
