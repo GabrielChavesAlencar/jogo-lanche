@@ -7,6 +7,10 @@ using UnityEngine;
 public class SanduicheSO : ScriptableObject
 {
     public string nome;
-    public Sprite [] ingredientes; 
-
+    public Sprite [] ingredientes;
+    public enum Ingreidente {
+        alface,
+        hamburguer,
+        tomate
+    }
 }
