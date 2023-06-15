@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\codigos\SanduicheSO.cs" />
     <Compile Include="Assets\codigos\jogo.cs" />
+    <Compile Include="Assets\codigos\ajuste_pos_ingrediente.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
