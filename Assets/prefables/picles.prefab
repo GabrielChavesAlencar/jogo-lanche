@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8293933668617704812}
   - component: {fileID: 8293933668617704815}
   - component: {fileID: 8293933668617704814}
+  - component: {fileID: -1237237978881695451}
   m_Layer: 0
   m_Name: picles
   m_TagString: Untagged
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-1237237978881695451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8293933668617704849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661d7e5504784d74dadb0c6c395d311f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

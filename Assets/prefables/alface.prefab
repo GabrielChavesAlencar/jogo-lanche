@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2408431931786681604}
   - component: {fileID: 2408431931786681605}
   - component: {fileID: 2408431931786681606}
+  - component: {fileID: 1645405460074976540}
   m_Layer: 0
   m_Name: alface
   m_TagString: Untagged
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06422448, y: 0.11229526}
+  m_Offset: {x: 0.06422448, y: 0.1382204}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.263682, y: 0.18043359}
+  m_Size: {x: 4.263682, y: 0.12858331}
   m_EdgeRadius: 0
 --- !u!50 &2408431931786681606
 Rigidbody2D:
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1645405460074976540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2408431931786681607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661d7e5504784d74dadb0c6c395d311f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
