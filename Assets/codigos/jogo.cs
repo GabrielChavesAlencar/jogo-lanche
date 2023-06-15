@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 
 public class jogo : MonoBehaviour
@@ -10,7 +12,7 @@ public class jogo : MonoBehaviour
     [SerializeField] SanduicheSO sanduicheSO;
 
     public Camera cam;
-    public string nome;
+    public string [] nomes_ingrediente;
     public bool seguir_mouse;
 
 
@@ -30,11 +32,18 @@ public class jogo : MonoBehaviour
     public Vector3 pos_inicial_item;
     public int layer_item = 0;
 
+    //descrição do lanche
+    [SerializeField] TMP_Text nome_lanche;
+    [SerializeField] TMP_Text lanche_descricao;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         updateItem();
+
     }
     private void OnValidate()
     {
@@ -56,8 +65,13 @@ public class jogo : MonoBehaviour
 
     }
     public void updateItem() {
-        nome = sanduicheSO.nome;
-        
+        nome_lanche.SetText(sanduicheSO.nome);
+        lanche_descricao.SetText("Primeiramente adicione "+sanduicheSO.ingredientes[0]+ " depois coloque " + sanduicheSO.ingredientes[1] +" e por fim acrecente " + sanduicheSO.ingredientes[2]);
+
+        for (int i = 0; i <= 2; i++) {
+            nomes_ingrediente[i] = sanduicheSO.ingredientes[i] + "";
+        }
+     //   if (sanduicheSO.ingredientes[0] + "" == "alface") { print("deu certo alface!"); }
 
     }
     public void selecionar_ingrediente(int num) {
