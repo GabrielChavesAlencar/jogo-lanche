@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 231903797}
   - component: {fileID: 231903796}
   m_Layer: 5
-  m_Name: ingrediente UI (3)
+  m_Name: ingrediente 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: 152.1}
+  m_AnchoredPosition: {x: -377, y: 149.8}
   m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231903796
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 388548244}
   - component: {fileID: 388548243}
   m_Layer: 5
-  m_Name: ingrediente UI (2)
+  m_Name: ingrediente 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1127,7 +1127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: 161.3}
+  m_AnchoredPosition: {x: -377, y: 160.2}
   m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388548243
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 052f6b649f15c294091b70f42462343f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77ae52f2e3d9ac1469f22b6675a01ae3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1804,12 +1804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3932e8d564516754292b9f7d2757c4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanduicheSO: {fileID: 11400000, guid: d29c9ef8500398241891038199b53bbc, type: 2}
+  sanduicheSO: {fileID: 11400000, guid: f25b77246a112b24c8b80d9b338dd687, type: 2}
   cam: {fileID: 519420031}
   nomes_ingrediente:
-  - picles
-  - queijo
   - hamburguer
+  - tomate
+  - picles
   seguir_mouse: 0
   item: {fileID: 1518303399}
   hamburger_UI: {fileID: 1518303399}
@@ -1830,6 +1830,16 @@ MonoBehaviour:
   layer_item: 0
   nome_lanche: {fileID: 662883612}
   lanche_descricao: {fileID: 996351010}
+  sprites_ingrediente:
+  - {fileID: 21300000, guid: bcffcc10587cc1d4382122e72cc2fefb, type: 3}
+  - {fileID: 21300000, guid: 052f6b649f15c294091b70f42462343f, type: 3}
+  - {fileID: 21300000, guid: 64970584a0ecc4f4daf818bfe0a3e603, type: 3}
+  - {fileID: 21300000, guid: c600d5e733693f746a4f7feb929b626c, type: 3}
+  - {fileID: 21300000, guid: 77ae52f2e3d9ac1469f22b6675a01ae3, type: 3}
+  imgs_ingrediente:
+  - {fileID: 231903796}
+  - {fileID: 388548243}
+  - {fileID: 1832871949}
 --- !u!1 &543302629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,7 +2282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X Burguer
+  m_text: Verdura Burguer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2513,7 +2523,7 @@ GameObject:
   - component: {fileID: 710691228}
   - component: {fileID: 710691227}
   m_Layer: 5
-  m_Name: ingrediente UI (4)
+  m_Name: pao baixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2536,7 +2546,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: 146.5}
+  m_AnchoredPosition: {x: -377, y: 142.5}
   m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710691227
@@ -3357,7 +3367,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Primeiramente adicione ???? depois coloque ???? e finalmente adicione ????
+  m_text: Primeiramente adicione hamburguer depois coloque tomate e por fim acrecente
+    picles
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5120,7 +5131,7 @@ GameObject:
   - component: {fileID: 1832871950}
   - component: {fileID: 1832871949}
   m_Layer: 5
-  m_Name: ingrediente UI (1)
+  m_Name: ingrediente 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5143,7 +5154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: 170.90001}
+  m_AnchoredPosition: {x: -377, y: 171.7}
   m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832871949
@@ -5166,7 +5177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 052f6b649f15c294091b70f42462343f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64970584a0ecc4f4daf818bfe0a3e603, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5348,7 +5359,7 @@ GameObject:
   - component: {fileID: 1966438199}
   - component: {fileID: 1966438198}
   m_Layer: 5
-  m_Name: ingrediente UI
+  m_Name: pao cima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5371,7 +5382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: 191.8}
+  m_AnchoredPosition: {x: -377, y: 191.9}
   m_SizeDelta: {x: 100, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966438198

@@ -11,6 +11,8 @@ public class jogo : MonoBehaviour
 {
     [SerializeField] SanduicheSO sanduicheSO;
 
+    [SerializeField] SanduicheSO [] sanduiches;
+
     public Camera cam;
     public string [] nomes_ingrediente;
     public bool seguir_mouse;
@@ -35,6 +37,9 @@ public class jogo : MonoBehaviour
     //descrição do lanche
     [SerializeField] TMP_Text nome_lanche;
     [SerializeField] TMP_Text lanche_descricao;
+
+    public Sprite[] sprites_ingrediente;
+    public Image[] imgs_ingrediente;
 
 
 
@@ -70,6 +75,11 @@ public class jogo : MonoBehaviour
 
         for (int i = 0; i <= 2; i++) {
             nomes_ingrediente[i] = sanduicheSO.ingredientes[i] + "";
+            if (nomes_ingrediente[i] == "alface") { imgs_ingrediente[i].sprite = sprites_ingrediente[0]; }
+            else if (nomes_ingrediente[i] == "hamburguer") { imgs_ingrediente[i].sprite = sprites_ingrediente[1]; }
+            else if (nomes_ingrediente[i] == "picles") { imgs_ingrediente[i].sprite = sprites_ingrediente[2]; }
+            else if (nomes_ingrediente[i] == "queijo") { imgs_ingrediente[i].sprite = sprites_ingrediente[3]; }
+            else if (nomes_ingrediente[i] == "tomate") { imgs_ingrediente[i].sprite = sprites_ingrediente[4]; }
         }
      //   if (sanduicheSO.ingredientes[0] + "" == "alface") { print("deu certo alface!"); }
 
