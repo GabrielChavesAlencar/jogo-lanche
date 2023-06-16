@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ajuste_pos_ingrediente : MonoBehaviour
 {
+   
     public GameObject item_abaixo;
 
     // Start is called before the first frame update
@@ -77,10 +78,5 @@ public class ajuste_pos_ingrediente : MonoBehaviour
             else if (nome == "picles") { transform.position = item_abaixo.transform.position + new Vector3(0, 0.1f, 0); }
             else if (nome == "pao parte de cima") { transform.position = item_abaixo.transform.position + new Vector3(0, 0.23f, 0); }
         }
-    }
-    private void OnValidate()
-    {
-        //
-       /// ajustar();
     }
 }

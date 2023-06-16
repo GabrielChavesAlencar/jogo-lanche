@@ -6,17 +6,8 @@ using UnityEngine.Playables;
 public class menu : MonoBehaviour
 {
     public PlayableDirector animacao;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
+    // incia a animação de largada da timeline
     public void inciar_jogo() {
         animacao.Play();
     }

@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class ingrediente : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
+    //destroy o lanche quando ele está pronto depois de um certo tempo
     void Update()
     {
         if (jogo.tempo_espera > 1.9f) { Destroy(gameObject); }

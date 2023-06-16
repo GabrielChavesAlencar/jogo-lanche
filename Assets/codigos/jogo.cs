@@ -9,51 +9,75 @@ using TMPro;
 
 public class jogo : MonoBehaviour
 {
-    [SerializeField] TMP_Text tempo_text;
-    [SerializeField] TMP_Text score_text;
-    [SerializeField] TMP_Text score_final_text;
+    //variaves de controle do jogo
+    [Header("Variaveis de controle")]
     public float tempo;
-
     public int score;
     private bool marcar_ponto;
     private bool diminuir_ponto;
     public static float tempo_espera;
-    public GameObject gameover_obj;
-    //[SerializeField] SanduicheSO sanduicheSO;
-
-    [SerializeField] SanduicheSO [] sanduiches;
-
-    public Camera cam;
-    public string [] nomes_ingrediente;
     public bool seguir_mouse;
-    public string [] ingredientes_colocados;
+    public float Vel_mouse = 0.1f;
+    public int layer_item = 0;
+    public int indice_ingrediente;
+    public Vector3 pos_inicial_item;
+    public string[] nomes_ingrediente;
+    public string[] ingredientes_colocados;
+    public int numero_lanche;
 
 
 
+    //prefables
+    [Header("Prefables")]
+    public GameObject[] ingredientes;
+
+
+    //ScriptableObjects
+    [Header("ScriptableObjects")]
+    [SerializeField] SanduicheSO[] sanduiches;
+
+
+
+    //textos da UI
+    [Header("textos da UI")]
+    [SerializeField] TMP_Text tempo_text;
+    [SerializeField] TMP_Text score_text;
+    [SerializeField] TMP_Text score_final_text;
+
+    //descrição do lanche UI
+    [SerializeField] TMP_Text nome_lanche;
+    [SerializeField] TMP_Text lanche_descricao;
+
+
+
+    //referencia de itens na ui
+    [Header("Referencia de itens na ui")]
     public RectTransform item;
-
     public RectTransform hamburger_UI;
     public RectTransform alface_UI;
     public RectTransform picles_UI;
     public RectTransform queijo_UI;
     public RectTransform tomate_UI;
-    
-    public float Vel_mouse = 0.1f;
-
-    public int indice_ingrediente;
-    public GameObject [] ingredientes;
-    public GameObject pao;
-    public Vector3 pos_inicial_item;
-    public int layer_item = 0;
-
-    //descrição do lanche
-    [SerializeField] TMP_Text nome_lanche;
-    [SerializeField] TMP_Text lanche_descricao;
-
-    public Sprite[] sprites_ingrediente;
     public Image[] imgs_ingrediente;
-    public int numero_lanche;
+    public GameObject gameover_obj;
 
+
+
+    //objetos na cena
+    [Header("Objetos na cena")]
+    public GameObject pao;
+    public Camera cam;
+    
+
+
+
+    //Referencia das iamgens na pasta
+    [Header("Referencia das iamgens na pasta")]
+    public Sprite[] sprites_ingrediente;
+
+   
+
+    [Header("Musicas e efeitos sonoros")]
     //musicas
     public AudioSource musica_jogo;
     public AudioSource musica_fim;
@@ -87,10 +111,9 @@ public class jogo : MonoBehaviour
             MoveObject();
 
         }
-        
-        if (Input.GetKeyDown(KeyCode.A)) { reiniciar_jogo(); }
-       
         proximo_lanche();
+
+        //condição de fim de jogo
         if (tempo > 0)
         {
             tempo -= Time.deltaTime;
@@ -125,6 +148,8 @@ public class jogo : MonoBehaviour
     
 
     }
+
+    //mostra qual ingrediente vai seguir o mouse
     public void selecionar_ingrediente(int num) {
         if (!seguir_mouse&&layer_item<3&&tempo>0)
         {
@@ -148,6 +173,8 @@ public class jogo : MonoBehaviour
         item.transform.SetAsLastSibling();
         
     }
+
+    //adiciona ingrediente no pão
     public void colocar_ingrediente() {
         if (seguir_mouse) {
             layer_item++;
@@ -172,6 +199,7 @@ public class jogo : MonoBehaviour
        
     }
 
+    //tira o lanche montado e mostra a receita do proximo lanche
     public void proximo_lanche() { 
         if (marcar_ponto|| diminuir_ponto) { tempo_espera += Time.deltaTime; }
         if (tempo_espera > 1 && tempo_espera < 1.1f) { 
@@ -197,6 +225,8 @@ public class jogo : MonoBehaviour
     public void reiniciar_jogo() {
         SceneManager.LoadScene("SampleScene");
     }
+
+    //solta o ingrediente que está segurando
     public void deselecionar_ing() {
         if (seguir_mouse)
         {
