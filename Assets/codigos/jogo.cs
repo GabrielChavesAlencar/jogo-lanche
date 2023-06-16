@@ -54,6 +54,9 @@ public class jogo : MonoBehaviour
     public Image[] imgs_ingrediente;
     public int numero_lanche;
 
+    public AudioSource musica_jogo;
+    public AudioSource musica_fim;
+
     
 
 
@@ -86,7 +89,7 @@ public class jogo : MonoBehaviour
         {
             tempo -= Time.deltaTime;
         }
-        else { tempo = 0; gameover_obj.SetActive(true); score_final_text.SetText("sua pontuacao é : " +score); }
+        else { tempo = 0; gameover_obj.SetActive(true); score_final_text.SetText("sua pontuacao é : " +score);if (musica_jogo.isPlaying) { musica_jogo.Stop();musica_fim.Play(); } }
 
         tempo_text.SetText("Tempo: "+tempo.ToString("000"));
     }
@@ -163,7 +166,7 @@ public class jogo : MonoBehaviour
             score_text.SetText("SCORE: " + score.ToString("00"));
             tempo_espera = 1.1f;
         }
-        if (tempo_espera > 4) {
+        if (tempo_espera > 3) {
             marcar_ponto = false;
             diminuir_ponto = false;
             tempo_espera = 0;
@@ -179,5 +182,14 @@ public class jogo : MonoBehaviour
     }
     public void reiniciar_jogo() {
         SceneManager.LoadScene("SampleScene");
+    }
+    public void deselecionar_ing() {
+        if (seguir_mouse)
+        {
+            seguir_mouse = false;
+            item.transform.position = pos_inicial_item;
+            item = null; ingredientes_colocados[layer_item] = "";
+            
+        }
     }
 }

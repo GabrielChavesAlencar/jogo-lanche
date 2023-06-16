@@ -13,6 +13,6 @@ public class ingrediente : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jogo.tempo_espera > 3.5f) { Destroy(gameObject); }
+        if (jogo.tempo_espera > 2.9f) { Destroy(gameObject); }
     }
 }
