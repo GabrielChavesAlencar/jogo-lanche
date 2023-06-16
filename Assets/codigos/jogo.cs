@@ -11,12 +11,14 @@ public class jogo : MonoBehaviour
 {
     [SerializeField] TMP_Text tempo_text;
     [SerializeField] TMP_Text score_text;
+    [SerializeField] TMP_Text score_final_text;
     public float tempo;
 
     public int score;
     private bool marcar_ponto;
     private bool diminuir_ponto;
     public static float tempo_espera;
+    public GameObject gameover_obj;
     //[SerializeField] SanduicheSO sanduicheSO;
 
     [SerializeField] SanduicheSO [] sanduiches;
@@ -58,6 +60,7 @@ public class jogo : MonoBehaviour
     
     void Start()
     {
+        tempo = 120;
         tempo_espera = 0;
         numero_lanche = Random.Range(0, sanduiches.Length);
         updateItem(numero_lanche);
@@ -76,10 +79,16 @@ public class jogo : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown(KeyCode.A)) { SceneManager.LoadScene("SampleScene"); }
+        if (Input.GetKeyDown(KeyCode.A)) { reiniciar_jogo(); }
        
         proximo_lanche();
+        if (tempo > 0)
+        {
+            tempo -= Time.deltaTime;
+        }
+        else { tempo = 0; gameover_obj.SetActive(true); score_final_text.SetText("sua pontuacao é : " +score); }
 
+        tempo_text.SetText("Tempo: "+tempo.ToString("000"));
     }
 
     //atualiza o icone e as informações do lanche na UI
@@ -129,13 +138,6 @@ public class jogo : MonoBehaviour
             temp.GetComponent<SpriteRenderer>().sortingOrder = layer_item;
             seguir_mouse = false;
             item.transform.position = pos_inicial_item;
-            /*
-            if (layer_item == 3)
-            {
-               
-                layer_item = 0;
-            }
-            */
             if (layer_item >= 3){atulizarpontuacao();}
         }
 
@@ -174,5 +176,8 @@ public class jogo : MonoBehaviour
             updateItem(numero_lanche);
             
         }
+    }
+    public void reiniciar_jogo() {
+        SceneManager.LoadScene("SampleScene");
     }
 }

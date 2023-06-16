@@ -60,6 +60,7 @@
     <Compile Include="Assets\codigos\jogo.cs" />
     <Compile Include="Assets\codigos\ajuste_pos_ingrediente.cs" />
     <Compile Include="Assets\codigos\ingrediente.cs" />
+    <Compile Include="Assets\codigos\menu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
