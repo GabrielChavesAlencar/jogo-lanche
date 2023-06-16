@@ -54,13 +54,19 @@ public class jogo : MonoBehaviour
     public Image[] imgs_ingrediente;
     public int numero_lanche;
 
+    //musicas
     public AudioSource musica_jogo;
     public AudioSource musica_fim;
 
-    
+    //efeitos sonoros
+    public AudioSource som_acerto;
+    public AudioSource som_erro;
 
 
-    
+
+
+
+
     void Start()
     {
         tempo = 120;
@@ -89,7 +95,15 @@ public class jogo : MonoBehaviour
         {
             tempo -= Time.deltaTime;
         }
-        else { tempo = 0; gameover_obj.SetActive(true); score_final_text.SetText("sua pontuacao é : " +score);if (musica_jogo.isPlaying) { musica_jogo.Stop();musica_fim.Play(); } }
+        else { 
+            tempo = 0; gameover_obj.SetActive(true);
+            score_final_text.SetText("sua pontuacao é : " +score);
+            deselecionar_ing();
+            if (musica_jogo.isPlaying) { 
+                musica_jogo.Stop();
+                musica_fim.Play(); 
+            }
+        }
 
         tempo_text.SetText("Tempo: "+tempo.ToString("000"));
     }
@@ -112,7 +126,7 @@ public class jogo : MonoBehaviour
 
     }
     public void selecionar_ingrediente(int num) {
-        if (!seguir_mouse&&layer_item<3)
+        if (!seguir_mouse&&layer_item<3&&tempo>0)
         {
 
             seguir_mouse = true;
@@ -161,12 +175,12 @@ public class jogo : MonoBehaviour
     public void proximo_lanche() { 
         if (marcar_ponto|| diminuir_ponto) { tempo_espera += Time.deltaTime; }
         if (tempo_espera > 1 && tempo_espera < 1.1f) { 
-            if (marcar_ponto) { score++; }
-            if (diminuir_ponto) { score--; }
+            if (marcar_ponto) { score++; som_acerto.Play(); }
+            if (diminuir_ponto) { score--; som_erro.Play(); }
             score_text.SetText("SCORE: " + score.ToString("00"));
             tempo_espera = 1.1f;
         }
-        if (tempo_espera > 3) {
+        if (tempo_espera > 2) {
             marcar_ponto = false;
             diminuir_ponto = false;
             tempo_espera = 0;
